@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Upload Image Example</h1>
+    <br>
+    <form  [formGroup]="uploadFileForm" >
+        <!-- <p>Valor de image: {{image}}</p>
+        <div class="form-group">
+            <input type="file" (change)="onImageUpload($event)">
+            <input type="button" (click)="imageUploadAction()" value="Upload Image" class="btn1">
+        </div>
+
+        <div>
+            <output *ngIf=successResponse class="success"><b>{{successResponse}}</b></output>
+        </div>
+        <br> -->
+         
+        <div class="form-group">
+            <input type="text" id="document" placeholder="Search document" formControlName="documentInfo" name="document" />
+            <input type="button" (click)="viewDocument()" value="View Document (image/pdf)" class="btn1">
+        </div>
+        <div class="form-group">
+            <input type="text" id="image" placeholder="Search Image" formControlName="documentFile" name="image" />
+            <input type="button" (click)="renderDocument()" value="View Image (only image)" >
+        </div>
+
+        <div class="form-group">            
+            <input type="button" (click)="getDocument()" value="View Image (only image)" >
+        </div>
+
+        <div *ngIf=dbDocument>
+            <img [src]="dbDocument">
+        </div>
+
+        <div id="imgTest"></div>
+        
+        
+    </form>
+    
+</div>
+

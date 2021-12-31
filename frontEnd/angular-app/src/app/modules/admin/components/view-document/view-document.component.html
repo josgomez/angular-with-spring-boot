@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>View document</h1> 
+    <form  [formGroup]="form" >        
+        <div class="form-group">
+            <input type="text" id="image" placeholder="Search Document" formControlName="documentFile" name="image" />
+            <input type="button" (click)="renderDocument()" value="View Document pdf with pdf-viewer)" >
+            <input type="button" (click)="openPdf()" value="View Document pdf with pdfjs-viewer)" >            
+        </div>        
+    </form> 
+
+    <div id="outerContainer">
+        <div class="pdf-container">
+          <pdf-viewer
+            [src]="pdfSource"
+            [rotation]="0"
+            [original-size]="false"
+            [show-all]="true"
+            [fit-to-page]="false"
+            [zoom]="1"
+            [zoom-scale]="'page-width'"
+            [stick-to-page]="false"
+            [render-text]="true"
+            [external-link-target]="'blank'"
+            [autoresize]="true"
+            [show-borders]="false"          
+            [style]="'height: 70vh; display: flex; align-items: center; justify-content: center;'">
+            </pdf-viewer> 
+        </div>
+    </div>
+    <br><br><br><br>
+  
+</div>
